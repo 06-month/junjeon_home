@@ -3,10 +3,10 @@ import type { ExperienceItem, Project, SkillGroup } from '@/types';
 export const site = {
   name: 'Jeon Jun',
   nameKo: '전준',
-  tagline: 'Computer Vision Researcher & AI Engineer',
-  subline: 'Deep learning–based visual understanding: hand pose estimation, segmentation, and recognition.',
+  tagline: 'Theory-driven research in visual understanding',
+  subline: 'I work on deep learning for perception—segmentation, pose estimation, recognition—starting from theoretical analysis and validating through experiments.',
   affiliation: 'Hanbat National University · AiR Lab',
-  keywords: ['Computer Vision', 'Hand Pose Estimation', 'Semantic Segmentation', 'Federated Learning'],
+  keywords: ['Computer Vision', 'Semantic Segmentation', 'Hand Pose Estimation', 'Federated Learning'],
   links: {
     github: 'https://github.com/06-month',
     blog: 'https://6month.tistory.com/',
@@ -17,24 +17,26 @@ export const site = {
 } as const;
 
 export const aboutParagraphs = [
-  'I study deep learning–based visual understanding, with a strong focus on hand pose estimation, segmentation, and recognition, driven by theoretical analysis and validated through iterative experimentation.',
-  'Current focus: satellite image building area segmentation.',
-  'Prior work spans satellite cloud segmentation (CMX), CLIP2FL-based federated learning with BKD (under submission), and offline-to-online RL, supported by experience with AWS and NCP.',
+  'I study deep learning–based visual understanding—hand pose estimation, segmentation, recognition—with a theory-first approach: I start from formal or structural analysis and then test hypotheses through controlled experiments.',
+  'Right now I am investigating how to segment building footprints from satellite imagery and what representations and losses best transfer across resolution and sensor conditions. Past work has touched cross-modal fusion for remote sensing (RGB/NIR), federated learning with vision–language priors (CLIP2FL, manuscript under submission), and the transition from offline to online reinforcement learning.',
 ];
+
+export const priorWorkFraming =
+  'The projects below sit on a single axis: from dense prediction and recognition in images to learning under distribution shift and limited supervision.';
 
 export const projects: Project[] = [
   {
     id: 'satellite-building',
     title: 'Satellite Image Building Area Segmentation',
     keywords: ['Semantic Segmentation', 'Satellite Imagery', 'Deep Learning'],
-    description: 'Lab Coding Seminar, 2026 (Jan. 2026 ~ Present). Semantic segmentation of building regions from satellite imagery using deep learning models.',
+    description: 'How can we reliably segment building footprints from overhead imagery across resolution and sensor differences? I am exploring representation and loss choices that improve generalization. Lab Coding Seminar, 2026 (ongoing).',
     ongoing: true,
   },
   {
     id: 'satellite-cloud',
     title: 'Satellite Cloud Semantic Segmentation',
     keywords: ['Semantic Segmentation', 'Computer Vision', 'CMX'],
-    description: 'Computer Vision Term Project, 2025. Semantic segmentation of satellite images for three cloud types (thick, thin, shadow). CMX (Cross-Modal Fusion) with RGB/NIR.',
+    description: 'We asked whether fusing RGB and NIR at the encoder improves segmentation of cloud types (thick, thin, shadow) compared to RGB-only baselines. Implemented and evaluated the CMX cross-modal fusion architecture on a dedicated satellite cloud dataset.',
     href: 'https://github.com/06-month/Satellite-Cloud-Semantic-Segmentation',
     label: 'GitHub',
   },
@@ -42,7 +44,7 @@ export const projects: Project[] = [
     id: 'clip2fl',
     title: 'CLIP2FL-based Federated Learning Research',
     keywords: ['Federated Learning', 'CLIP', 'BKD'],
-    description: 'IoT Project, 2025. Federated learning research on CLIP2FL with balanced knowledge distillation. Manuscript under submission to a domestic communications conference.',
+    description: 'Can vision–language priors (CLIP) stabilize federated learning under non-IID and class imbalance? We studied balanced knowledge distillation (BKD) on top of CLIP2FL and compared to standard FL. Manuscript under submission.',
     href: 'https://github.com/06-month/CLIP2FL_BKD',
     label: 'GitHub',
   },
@@ -50,7 +52,7 @@ export const projects: Project[] = [
     id: 'rl-bc-ppo',
     title: 'Offline-to-Online Reinforcement Learning with BC and PPO',
     keywords: ['Reinforcement Learning', 'RLlib', 'MuJoCo'],
-    description: 'RL Final Project, 2025. Offline behavior cloning followed by PPO fine-tuning using RLlib on the MuJoCo HalfCheetah environment.',
+    description: 'When does offline pretraining (behavior cloning) help or hurt subsequent online fine-tuning with PPO? We compared BC→PPO pipelines on HalfCheetah and Atari to see how data quality and policy initialization affect sample efficiency.',
     href: 'https://github.com/06-month/Offline-to-Online-Reinforcement-Learning',
     label: 'GitHub',
   },
@@ -58,13 +60,13 @@ export const projects: Project[] = [
     id: 'brain-tumor',
     title: 'Brain Tumor MRI Segmentation',
     keywords: ['Semantic Segmentation', 'Medical Imaging', 'BraTS'],
-    description: 'Big Data Analysis Project, 2025. Deep learning–based brain tumor MRI segmentation on the BraTS dataset.',
+    description: 'Dense prediction under strong class imbalance and multi-modal MRI inputs: we trained and evaluated segmentation models on BraTS to compare architectural and loss choices for tumor subregion delineation.',
   },
   {
     id: 'tiny-imagenet',
     title: 'Tiny-ImageNet Image Classification',
     keywords: ['Image Classification', 'Deep Learning', 'Tiny-ImageNet'],
-    description: 'Lab Coding Seminar, 2025. Multi-class image classification on the Tiny-ImageNet dataset (ResNet, ViT, Swin).',
+    description: 'We compared how well different inductive biases (CNN vs. ViT vs. Swin) and training recipes transfer to the 200-class Tiny-ImageNet setting, with a focus on data augmentation and learning-rate schedules.',
     href: 'https://github.com/06-month/Tiny-ImageNet-Image-Classification',
     label: 'GitHub',
   },
