@@ -10,7 +10,7 @@ export const site = {
   links: {
     github: 'https://github.com/06-month',
     blog: 'https://6month.tistory.com/',
-    cv: 'Jun%20Jeon%20CV.pdf?v=3', // 쿼리로 캐시 우회 (PDF 수정 시 v 숫자 올리기)
+    cv: 'Jun%20Jeon%20CV.pdf?v=4', // 쿼리로 캐시 우회 (PDF 수정 시 v 숫자 올리기)
   },
   email: 'junjeon@edu.hanbat.ac.kr',
   phone: '+82 10-4107-4189',
@@ -30,9 +30,9 @@ export const priorWorkFraming =
 export const projects: Project[] = [
   {
     id: 'hand-pose',
-    title: 'Hands2023-based 3D Hand Pose Estimation',
-    keywords: ['Hand Pose Estimation', '3D Vision', 'Deep Learning'],
-    description: '3D hand pose estimation from RGB images using keypoint regression-based deep learning models. Independent Experimental Study, 2026 (Feb. 2026 ~ Present).',
+    title: 'Egocentric 3D Hand Pose Estimation on AssemblyHands (HANDS@ICCV2023 Task 1)',
+    keywords: ['Hand Pose Estimation', '3D Vision', 'AssemblyHands'],
+    description: 'Implementing and analyzing RGB-based 3D keypoint regression models on the AssemblyHands dataset. Independent Experimental Study, 2026 (Feb. 2026 ~ Present).',
     ongoing: true,
   },
   {
